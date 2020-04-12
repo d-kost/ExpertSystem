@@ -1,26 +1,24 @@
-let Question = function(text, actions) {
+let Question = function(id, text) {
+    this.id = id;
     this.text = text;
-    this.actions = actions;
-}
-
-Question.prototype.getNextQuestion = function(answer) {
-    if (answer == 'yes') {
-        return this.actions[0];
-    }
-    if (answer == 'no') {
-        return this.actions[1];
-    }
-    return null;
+    this.answer = null; //true or false
 }
 
 
-let questions = {
-    0: new Question('Есть ли невыполненные лабораторные работы?', [1, 2]),
-
-    1: new Question('Скоро дедлайн?', ['Делать лабораторные', 2]),
-
-    2: new Question('Сегодня работали более 6 часов?', ['Отдыхать', 3]),
-
-    3: new Question('Готов ли диплом?', ['Найти еще работу', 'Делать диплом']),
+function getQuestions() {
+    return {
+        0: new Question(0, 'Есть ли невыполненные лабораторные работы?'),
     
+        1: new Question(1, 'Скоро дедлайн?'),
+    
+        2: new Question(2, 'Сегодня работали более 6 часов?'),
+    
+        3: new Question(3, 'Готов ли диплом?'),
+    
+        // 4: new Question(4, 'test 4'),
+    
+        // 5: new Question(5, 'test 5')
+        
+    }
+
 }

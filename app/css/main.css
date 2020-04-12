@@ -14,6 +14,10 @@ body {
   width: 20em;
 }
 
+#question {
+  min-height: 70px;
+}
+
 button {
   padding: 5px;
   min-width: 100px;
